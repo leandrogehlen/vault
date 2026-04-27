@@ -8,6 +8,21 @@ nl:
     redmine_title_encription_key: "Gebruik Redmine encryptie"
     vault_encription_notice: "Wordt alleen gebruikt door de encryptie methode van de kluis"
     redmine_encryption_notice: "Aanbevolen. Vergeet niet om jouw eigen sluitel in de database_cipher_key in config/configuration toe te passen. Belangrijk: voer het commando: \"rake redmine:plugins:vault:convert\" nadat je deze wijzigingen hebt toegepast."
+    show_top_menu: "In topmenu tonen"
+    show_top_menu_notice: "Toon de Vault-link in de bovenste Redmine-navigatie."
+    encrypt_files: "Bestanden versleutelen"
+    encrypt_files_notice: "Wanneer ingeschakeld, worden alle geuploade bestanden op schijf versleuteld. Wanneer uitgeschakeld, worden alle bestanden ontsleuteld."
+    encrypt_files_warning_title: "Belangrijk: maak een back-up voor in-/uitschakelen"
+    encrypt_files_warning_body_html: "Maak voordat je deze instelling wijzigt handmatig een back-up van je bestanden door de map <code style='background-color: #f1e3cd; padding: 2px 6px; border-radius: 2px;'>./keys</code> naar een andere locatie op de server te kopiëren. Dit voorkomt gegevensverlies als er fouten optreden tijdens versleutelen/ontsleutelen."
+    encrypt_files_backup_howto: "Back-up maken (voer uit in terminal vanaf Rails-root):"
+    encrypt_files_backup_step_1_html: "• <code>mkdir keys.backup</code> = back-upmap maken"
+    encrypt_files_backup_step_2_html: "• <code>&&</code> = volgende opdracht uitvoeren als de eerste slaagt"
+    encrypt_files_backup_step_3_html: "• <code>cp -r ./keys/* ./keys.backup/</code> = alle bestanden kopiëren"
+    generate_key_confirm: "Weet je zeker dat je de versleutelingssleutel opnieuw wilt genereren? De huidige sleutel wordt vervangen."
+    admin_tools:
+      title: "Beheerhulpmiddelen"
+      permissions_audit: "Machtigingen-audit"
+      description: "Controleer welke gebruikers toegang hebben tot welke sleutels en waarom. Handig voor het debuggen van machtigingen en het plannen van migratie naar taggebaseerde machtigingen."
 
   activerecord:
     models:
@@ -45,6 +60,7 @@ nl:
       new: "Nieuwe sleutel"
       actions: "Acties"
       clipboard: "Kopieer naar klembord"
+      generate: "Genereren"
       find: "Zoekopdracht"
 
     attr:
@@ -84,6 +100,8 @@ nl:
     settings:
       saved: "Settings saved"
       keys_restore: "Keys restored"
+      encrypt_files_enabled: "Instellingen opgeslagen. Bestandsversleuteling wordt ingeschakeld. Dit kan even duren, afhankelijk van het aantal bestanden."
+      encrypt_files_disabled: "Instellingen opgeslagen. Bestandsversleuteling wordt uitgeschakeld en alle bestanden worden ontsleuteld. Dit kan even duren, afhankelijk van het aantal bestanden."
     key:
       update:
         success: "Sleutel succesvol aangepast"

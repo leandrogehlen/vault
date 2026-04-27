@@ -8,6 +8,21 @@ ru:
     redmine_title_encription_key: "Использовать шифрование Redmine"
     vault_encription_notice: "Используется только встроенным методом шифрования Vault"
     redmine_encryption_notice: "Рекомендуется. Не забудьте установить свой ключ в database_cipher_key в config/configuration.yml. ВАЖНО! Выполните rake redmine:plugins:vault:convert после того, как измените это значение."
+    show_top_menu: "Показывать в верхнем меню"
+    show_top_menu_notice: "Показывать ссылку Vault в верхней навигации Redmine."
+    encrypt_files: "Шифровать файлы"
+    encrypt_files_notice: "Когда включено, все загруженные файлы будут зашифрованы на диске. Когда выключено, все файлы будут расшифрованы."
+    encrypt_files_warning_title: "⚠️ Важно: сделайте резервную копию перед включением/выключением"
+    encrypt_files_warning_body_html: "Перед переключением этой настройки вручную создайте резервную копию файлов, скопировав каталог <code style='background-color: #f1e3cd; padding: 2px 6px; border-radius: 2px;'>./keys</code> в другое место на сервере. Это защитит от потери данных, если в процессе шифрования/расшифровки возникнут ошибки."
+    encrypt_files_backup_howto: "Как сделать резервную копию (выполните в терминале из корня Rails):"
+    encrypt_files_backup_step_1_html: "• <code>mkdir keys.backup</code> = создать каталог для резервной копии"
+    encrypt_files_backup_step_2_html: "• <code>&&</code> = выполнить следующую команду, если первая завершилась успешно"
+    encrypt_files_backup_step_3_html: "• <code>cp -r ./keys/* ./keys.backup/</code> = скопировать все файлы"
+    generate_key_confirm: "Вы уверены, что хотите сгенерировать новый ключ шифрования? Текущий ключ будет заменен."
+    admin_tools:
+      title: "Инструменты администратора"
+      permissions_audit: "🔍 Аудит прав"
+      description: "Проверка того, какие пользователи имеют доступ к каким ключам и почему. Полезно для отладки прав и планирования миграции к доступу на основе тегов."
 
   activerecord:
     models:
@@ -45,6 +60,7 @@ ru:
       new: "Добавить ключ"
       actions: "Действия"
       clipboard: "Копировать в буфер"
+      generate: "Сгенерировать"
       find: "Искать"
 
     attr:
@@ -84,6 +100,8 @@ ru:
     settings:
       saved: "Настройки сохранены"
       keys_restore: "Ключи были успешно восстановлены"
+      encrypt_files_enabled: "Настройки сохранены. Включается шифрование файлов. В зависимости от количества файлов это может занять некоторое время."
+      encrypt_files_disabled: "Настройки сохранены. Шифрование файлов отключается, все файлы будут расшифрованы. В зависимости от количества файлов это может занять некоторое время."
     key:
       update:
         success: "Ключ был успешно изменен"

@@ -8,6 +8,21 @@ pt:
     redmine_title_encription_key: "Use Criptografia Redmine"
     vault_encription_notice: "Usado apenas pelo método de criptografia do Vault"
     redmine_encryption_notice: "Recomendado. Não esqueça de colocar sua chave em database_cipher_key em config / configuration.yml. IMPORTANTE: execute o rake redmine: plugins: vault: converte depois de mudar este interruptor."
+    show_top_menu: "Mostrar no menu superior"
+    show_top_menu_notice: "Mostrar o link do Vault na navegação superior do Redmine."
+    encrypt_files: "Encriptar ficheiros"
+    encrypt_files_notice: "Quando ativado, todos os ficheiros enviados serão encriptados em disco. Quando desativado, todos os ficheiros serão desencriptados."
+    encrypt_files_warning_title: "Importante: faça backup antes de ativar/desativar"
+    encrypt_files_warning_body_html: "Antes de alternar esta configuração, faça backup manual dos seus ficheiros copiando a pasta <code style='background-color: #f1e3cd; padding: 2px 6px; border-radius: 2px;'>./keys</code> para outro local no servidor. Isto protege contra perda de dados caso ocorram erros durante a encriptação/desencriptação."
+    encrypt_files_backup_howto: "Como fazer backup (executar no terminal a partir da raiz do Rails):"
+    encrypt_files_backup_step_1_html: "• <code>mkdir keys.backup</code> = criar pasta de backup"
+    encrypt_files_backup_step_2_html: "• <code>&&</code> = executar o próximo comando se o primeiro tiver sucesso"
+    encrypt_files_backup_step_3_html: "• <code>cp -r ./keys/* ./keys.backup/</code> = copiar todos os ficheiros"
+    generate_key_confirm: "Tem a certeza de que quer regenerar a chave de encriptação? A chave atual será substituída."
+    admin_tools:
+      title: "Ferramentas de administrador"
+      permissions_audit: "Auditoria de permissões"
+      description: "Verifique quais utilizadores têm acesso a quais chaves e por quê. Útil para depurar permissões e planear a migração para permissões baseadas em tags."
 
   activerecord:
     models:
@@ -45,6 +60,7 @@ pt:
       new: "Nova Chave"
       actions: "Ações"
       clipboard: "Copiar para clipboard"
+      generate: "Gerar"
       find: "Procurar"
 
     attr:
@@ -84,6 +100,8 @@ pt:
     settings:
       saved: "Salvar Configurações"
       keys_restore: "Chaves restauradas"
+      encrypt_files_enabled: "Configurações salvas. A encriptação de ficheiros está a ser ativada. Isto pode demorar um pouco, dependendo da quantidade de ficheiros."
+      encrypt_files_disabled: "Configurações salvas. A encriptação de ficheiros está a ser desativada e todos os ficheiros serão desencriptados. Isto pode demorar um pouco, dependendo da quantidade de ficheiros."
     key:
       update:
         success: "A chave foi modificada com sucesso"

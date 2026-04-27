@@ -8,6 +8,21 @@ fr:
     redmine_title_encription_key: "Utiliser le chiffrement de Redmine"
     vault_encription_notice: "Utilisé uniquement avec la méthode de chiffrement de Vault"
     redmine_encryption_notice: "Recommandé. N'oubliez pas de mettre votre clef dans l'option database_cipher_key du fichier config/configuration.yml. IMPORTANT: Lancez redmine:plugins:vault:convert aprèrs tout changement de ce paramètre."
+    show_top_menu: "Afficher dans le menu supérieur"
+    show_top_menu_notice: "Afficher le lien Vault dans la navigation supérieure de Redmine."
+    encrypt_files: "Chiffrer les fichiers"
+    encrypt_files_notice: "Lorsque cette option est activée, tous les fichiers téléversés seront chiffrés sur le disque. Lorsqu'elle est désactivée, tous les fichiers seront déchiffrés."
+    encrypt_files_warning_title: "Important : sauvegarde avant activation/désactivation"
+    encrypt_files_warning_body_html: "Avant de modifier ce paramètre, sauvegardez manuellement vos fichiers en copiant le répertoire <code style='background-color: #f1e3cd; padding: 2px 6px; border-radius: 2px;'>./keys</code> vers un autre emplacement sur le serveur. Cela protège contre la perte de données en cas d'erreur lors du chiffrement/déchiffrement."
+    encrypt_files_backup_howto: "Comment sauvegarder (exécuter dans un terminal depuis la racine Rails) :"
+    encrypt_files_backup_step_1_html: "• <code>mkdir keys.backup</code> = créer le dossier de sauvegarde"
+    encrypt_files_backup_step_2_html: "• <code>&&</code> = exécuter la commande suivante si la première réussit"
+    encrypt_files_backup_step_3_html: "• <code>cp -r ./keys/* ./keys.backup/</code> = copier tous les fichiers"
+    generate_key_confirm: "Êtes-vous sûr de vouloir régénérer la clé de chiffrement ? Cela remplacera la clé actuelle."
+    admin_tools:
+      title: "Outils d'administration"
+      permissions_audit: "Audit des permissions"
+      description: "Vérifiez quels utilisateurs ont accès à quelles clés et pourquoi. Utile pour déboguer les permissions et planifier une migration vers des permissions basées sur des tags."
 
   activerecord:
     models:
@@ -45,6 +60,7 @@ fr:
       new: "Nouvelle clef"
       actions: "Actions"
       clipboard: "Copier vers le presse papier"
+      generate: "Générer"
       find: "Recherche"
 
     attr:
@@ -84,6 +100,8 @@ fr:
     settings:
       saved: "Paramètres sauvegardés"
       keys_restore: "Clefs restaurés"
+      encrypt_files_enabled: "Paramètres enregistrés. Le chiffrement des fichiers est en cours d'activation. Cela peut prendre un moment selon le nombre de fichiers."
+      encrypt_files_disabled: "Paramètres enregistrés. Le chiffrement des fichiers est en cours de désactivation et tous les fichiers seront déchiffrés. Cela peut prendre un moment selon le nombre de fichiers."
     key:
       update:
         success: "La clef a été mise à jour"
